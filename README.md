@@ -69,4 +69,4 @@ In order to do better MVVM some other features have been added
 	b.  RelayCommand, simple lambda command interface
 
 *  Collections
-	a.  AsyncObservableCollection, a collection which allows adding via other threads but will notify on UI thread.  _Note:_The collection must be initialized on the UI thread.
+	a.  AsyncObservableCollection, a collection which allows adding via other threads but will notify on UI thread.  __Note:__The collection must be initialized on the UI thread.
