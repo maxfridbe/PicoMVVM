@@ -10,10 +10,10 @@ Solution:
 	Create a .csproj that can be integrated with anyone starting a WPF MVVM project.  This allows the person to add more functionality (than is currently supported in PicoMVVM) and also allows pruning of features.
 
 How to use:
->  PicoMVVM has one dependency that must be installed. 
-	We also reccommend using this dependency for your own project. 
-	Add the VS plugin Fody.  [MORE ON FODY HERE](https://github.com/Fody/Fody).
+>  PicoMVVM reccommends using the VS plugin Fody for your ViewModels.  
+	[MORE ON FODY HERE](https://github.com/Fody/Fody).
 	This is a codeweaver extension which keeps you from having to write manual NotifyPropertyChanged. 
+	When adding more base classes to PicoMVVM csproj it is recommended to enable Fody on the project.
 	_Note:_ it is trivial to change PicoMVVM to not use Fody so feel free to do so if you are against codeweaving.
 
 1.  In the XAML (of each view that has to load a dynamic view):
