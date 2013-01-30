@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0FE0F176-D6DD-4909-80A9-95065383733B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PicoMVVM</RootNamespace>
+    <AssemblyName>PicoMVVM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.32.2.0\lib\NET40\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\DialogResultBehavior.cs" />
+    <Compile Include="Collections\AsyncObservableCollection.cs" />
+    <Compile Include="Commands\BoundRelayCommand.cs" />
+    <Compile Include="Commands\ShowDialogCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="PubSub\IMessageCenter.cs" />
+    <Compile Include="PubSub\MessageCenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\SharedResourceDictionary.cs" />
+    <Compile Include="Selectors\ClassNameViewSelector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selectors\ViewSelectorBase.cs" />
+    <Compile Include="ViewModels\DisplayableViewModelBase.cs" />
+    <Compile Include="ViewModels\Reflect.cs" />
+    <Compile Include="ViewModels\ContainerViewModelBase.cs" />
+    <Compile Include="ViewModels\IContainerViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\ViewResolverBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{4532C638-2B49-4FA1-8482-D024E6EC1F90}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterCompile" />
+  <Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />
+</Project>
