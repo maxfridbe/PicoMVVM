@@ -65,8 +65,8 @@ In order to do better MVVM some other features have been added
 	```
 
 *  Commands
-	a.  ShowDialogCommand, a command which knows a bit about the View and ViewModel and can open a dialog.
-	b.  RelayCommand, simple lambda command interface
+	*  ShowDialogCommand, a command which knows a bit about the View and ViewModel and can open a dialog.
+	*  RelayCommand, simple lambda command interface
 
 *  Collections
 	a.  AsyncObservableCollection, a collection which allows adding via other threads but will notify on UI thread.  __Note:__The collection must be initialized on the UI thread.
