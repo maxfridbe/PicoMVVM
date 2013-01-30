@@ -46,8 +46,8 @@ How to use:
 	```
 
 3.  In the ViewModel source:
-	a.  If your view contains other views subclass ContainerViewModelBase. Setting CurrentViewModel will trigger the XAML binding to pick an appropriate view for your ViewModel
-	b.  If your view stands alone subclass ViewModelBase
+	*  If your view contains other views: subclass ContainerViewModelBase. Setting CurrentViewModel will trigger the XAML binding to pick an appropriate view for your ViewModel
+	*  If your view stands alone: subclass ViewModelBase
 
 Other Features
 --------------
