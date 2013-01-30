@@ -12,7 +12,7 @@ Solution:
 How to use:
 	-1) PicoMVVM has one dependency that must be installed.  We also reccommend using this dependency for your own project. Add the VS plugin Fody.  This is a codeweaver extension which keeps you from having to write manual NotifyPropertyChanged.  _Note:_ it is trivial to change PicoMVVM to not use Fody so feel free to do so if you are against codeweaving.
 	1) In the XAML (of each view that has to load a dynamic view):
-	```xml
+	```xaml
 <Window.Resources>
      <ResourceDictionary>
           <Selectors:ClassNameViewSelector x:Key="ViewSelector" />
