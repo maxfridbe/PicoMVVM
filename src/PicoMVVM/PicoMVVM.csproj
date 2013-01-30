@@ -35,9 +35,6 @@
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="PropertyChanged">
-      <HintPath>..\packages\PropertyChanged.Fody.1.32.2.0\lib\NET40\PropertyChanged.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -47,7 +44,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviors\DialogResultBehavior.cs" />
@@ -55,6 +51,9 @@
     <Compile Include="Commands\BoundRelayCommand.cs" />
     <Compile Include="Commands\ShowDialogCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Infrastructure\Options\None.cs" />
+    <Compile Include="Infrastructure\Options\Option.cs" />
+    <Compile Include="Infrastructure\Options\Some.cs" />
     <Compile Include="PubSub\IMessageCenter.cs" />
     <Compile Include="PubSub\MessageCenter.cs">
       <SubType>Code</SubType>
@@ -86,5 +85,4 @@
   </Target>
   -->
   <Target Name="AfterCompile" />
-  <Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />
 </Project>

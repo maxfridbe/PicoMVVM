@@ -2,8 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PicoMVVM.Infrastructure.Options;
 using PicoMVVM.PubSub;
 
 namespace PicoMVVM.Tests

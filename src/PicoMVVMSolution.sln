@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicoMVVM", "PicoMVVM\PicoMVVM.csproj", "{0FE0F176-D6DD-4909-80A9-95065383733B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicoMVVM.Tests", "PicoMVVM.Tests\PicoMVVM.Tests.csproj", "{0321399B-A059-460F-9454-57FF0155CF0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FE0F176-D6DD-4909-80A9-95065383733B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE0F176-D6DD-4909-80A9-95065383733B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE0F176-D6DD-4909-80A9-95065383733B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE0F176-D6DD-4909-80A9-95065383733B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0321399B-A059-460F-9454-57FF0155CF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0321399B-A059-460F-9454-57FF0155CF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0321399B-A059-460F-9454-57FF0155CF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0321399B-A059-460F-9454-57FF0155CF0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
