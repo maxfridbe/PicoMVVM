@@ -16,7 +16,34 @@ namespace PicoMVVM.Commands
 		: ICommand where TSource : INotifyPropertyChanged
 	{
 		/// <summary>
-		/// Creates a new command.
+		/// Creates a new command. Bound can execute to a nullable property
+		/// </summary>
+		/// <param name="execute">The execution logic.</param>
+		/// <param name="isNullProperty">An expression referencing a object that if null will be false</param>
+		/// <param name="propertyDeclarer">The object that declares the property that triggers a change in command execution status</param>
+		public BoundRelayCommand(Action<object> execute, Expression<Func<TSource, object>> isNullProperty, TSource propertyDeclarer)
+		{
+			if (execute == null)
+				throw new ArgumentNullException("execute");
+
+			if (isNullProperty == null)
+				throw new ArgumentNullException("isNullProperty");
+
+			if (propertyDeclarer == null)
+				throw new ArgumentNullException("propertyDeclarer");
+
+			_execute = execute;
+
+			var property = Reflect.PropertyOf(isNullProperty);
+			_propertyName = property.Name;
+			propertyDeclarer.PropertyChanged += propertyDeclarer_PropertyChanged;
+			var prop = isNullProperty.Compile();
+			Func<TSource, bool> func = src => prop.Invoke(src) != null;
+			_canExecute = () => func(propertyDeclarer);
+		}
+
+		/// <summary>
+		/// Creates a new command. Bound can execute to a boolean property
 		/// </summary>
 		/// <param name="execute">The execution logic.</param>
 		/// <param name="canExecuteProperty">An expression referencing a boolean property that determines the command's execution status</param>
